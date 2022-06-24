@@ -63,7 +63,10 @@ $innerwidth : 1320px;
 .banner {
   position: relative;
   display: block;
+  height: 50px;
+  background-color: #ffcc00;
 }
+.banner .inner{}
 /* 레이아웃 */
 .wrap {
   position: relative;

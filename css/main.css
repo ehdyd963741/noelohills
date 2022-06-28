@@ -23,6 +23,7 @@ a {
 
 html {
   font-size: 10px;
+  overflow-x: hidden;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
   line-height: 1.5;
   letter-spacing: -0.45px;
   font-style: normal;
+  overflow-x: hidden;
 }
 
 /* 공통클래스 */
@@ -127,14 +129,13 @@ body {
   background-color: #fff;
   border-bottom: 1px solid #dcdcdc;
   z-index: 9999;
-}
-
-.inner {
-  display: flex;
-  height: 100%;
   /* 상단 반응형 */
 }
-.inner .logo {
+.header .inner {
+  display: flex;
+  height: 100%;
+}
+.header .inner .logo {
   position: relative;
   display: block;
   width: 111px;
@@ -144,20 +145,20 @@ body {
   margin-top: 20px;
   margin-right: 65px;
 }
-.inner .gnb {
+.header .inner .gnb {
   position: relative;
   display: block;
 }
-.inner .gnb .menu {
+.header .inner .gnb .menu {
   position: relative;
   display: block;
 }
-.inner .gnb .menu > li {
+.header .inner .gnb .menu > li {
   position: relative;
   display: block;
   float: left;
 }
-.inner .gnb .menu > li > a {
+.header .inner .gnb .menu > li > a {
   position: relative;
   display: block;
   line-height: 80px;
@@ -168,16 +169,16 @@ body {
   z-index: 3;
   padding: 0 28px;
 }
-.inner .gnb .menu > li > a:hover {
+.header .inner .gnb .menu > li > a:hover {
   color: #f9d14d;
 }
-.inner .gnb .menu > li:hover > a {
+.header .inner .gnb .menu > li:hover > a {
   color: #f9d14d;
 }
-.inner .gnb .menu > li:hover .submenu {
+.header .inner .gnb .menu > li:hover .submenu {
   visibility: visible;
 }
-.inner .gnb .menu > li .submenu {
+.header .inner .gnb .menu > li .submenu {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -192,31 +193,93 @@ body {
   background-color: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
-.inner .gnb .menu > li .submenu li {
+.header .inner .gnb .menu > li .submenu li {
   padding: 17px 0;
 }
-.inner .gnb .menu > li .submenu li a {
+.header .inner .gnb .menu > li .submenu li a {
   font-size: 13px;
   white-space: nowrap;
 }
-.inner .gnb .menu > li .submenu li a:hover {
+.header .inner .gnb .menu > li .submenu li a:hover {
   color: #f9d14d;
 }
+.header .inner .member {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-top: 25px;
+}
+.header .inner .member .member-list {
+  position: relative;
+  display: block;
+}
+.header .inner .member .member-list li {
+  position: relative;
+  display: block;
+  float: left;
+  margin-left: 42px;
+}
+.header .inner .member .member-list li:first-child {
+  margin-left: 0;
+}
+.header .inner .member .member-list li a {
+  position: relative;
+  display: block;
+  width: 23px;
+  height: 23px;
+}
+.header .inner .member .member-list li a:hover .tooltip {
+  visibility: visible;
+}
+.header .inner .member .member-list li a .tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+  display: inline-block;
+  visibility: hidden;
+  color: #fff;
+  background-color: #000;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+.header .inner .member .member-list li a .tooltip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  top: -3px;
+  display: block;
+  background-color: #000;
+  width: 6px;
+  height: 6px;
+}
+.header .inner .member .member-list li .member-cart {
+  background: url("../images/ico-cart.png") no-repeat center;
+}
+.header .inner .member .member-list li .member-mypage {
+  background: url("../images/ico-user.png") no-repeat center;
+}
+.header .inner .member .member-list li .member-login {
+  background: url("../images/ico-login.png") no-repeat center;
+}
 @media all and (max-width: 1080px) {
-  .inner .menu > li > a {
+  .header .menu > li > a {
     padding: 0 18px !important;
   }
-  .inner .member-list > li {
+  .header .member-list > li {
     margin-left: 22px !important;
   }
 }
 @media all and (max-width: 880px) {
-  .inner .menu > li > a {
+  .header .menu > li > a {
     padding: 0 10px !important;
   }
 }
 @media all and (max-width: 800px) {
-  .inner .logo {
+  .header .logo {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -224,73 +287,11 @@ body {
     margin-top: 0 !important;
     margin-right: 0 !important;
   }
-  .inner .gnb {
+  .header .gnb {
     display: none !important;
   }
-  .inner .member {
+  .header .member {
     display: none !important;
-  }
-  .inner .member {
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-top: 27px;
-  }
-  .inner .member .member-list {
-    position: relative;
-    display: block;
-  }
-  .inner .member .member-list li {
-    position: relative;
-    display: block;
-    float: left;
-    margin-left: 42px;
-  }
-  .inner .member .member-list li:first-child {
-    margin-left: 0;
-  }
-  .inner .member .member-list a {
-    position: relative;
-    display: block;
-    width: 23px;
-    height: 23px;
-  }
-  .inner .member .member-list a:hover .tooltip {
-    visibility: visible;
-  }
-  .inner .member .member-list a .tooltip {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30px;
-    display: inline-block;
-    visibility: hidden;
-    color: #fff;
-    background-color: #000;
-    white-space: nowrap;
-    padding: 4px 8px;
-    border-radius: 3px;
-    font-size: 11px;
-  }
-  .inner .member .member-list a .tooltip::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-    top: -3px;
-    display: block;
-    background-color: #000;
-    width: 6px;
-    height: 6px;
-  }
-  .inner .member .member-list .member-cart {
-    background: url("../images/ico-cart.png") no-repeat center;
-  }
-  .inner .member .member-list .member-mypage {
-    background: url("../images/ico-user.png") no-repeat center;
-  }
-  .inner .member .member-list .member-login {
-    background: url("../images/ico-login.png") no-repeat center;
   }
 }
 
@@ -298,7 +299,6 @@ body {
 .visual {
   position: relative;
   display: block;
-  height: 910px;
 }
 .visual .sw-visual {
   width: 100%;
@@ -311,12 +311,10 @@ body {
   height: 100%;
 }
 .visual .sw-visual .swiper-slide a .visual-txt {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 45px;
+  position: relative;
   display: block;
   text-align: center;
+  padding-top: 50px 0;
 }
 .visual .sw-visual .swiper-slide a .visual-title {
   position: relative;
@@ -342,6 +340,12 @@ body {
   padding: 10px 30px;
   font-weight: 500;
 }
+.visual .sw-visual .visual-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 600px;
+}
 .visual .sw-visual .visual-1 {
   background: url("../images/PC_sw_1_new.png") no-repeat center;
   background-size: cover;
@@ -351,7 +355,7 @@ body {
   background-size: cover;
 }
 .visual .sw-visual .visual-3 {
-  background: url("../images/PC2_Baby_3.png") no-repeat center;
+  background: url("../images/PC2_sw_3.png") no-repeat center;
   background-size: cover;
 }
 .visual .sw-visual .visual-4 {
@@ -378,47 +382,67 @@ body {
 }
 
 /* 비주얼 반응형 */
-@media all and (max-width: 760px) {
-  .visual {
-    height: 69vw;
-    margin-bottom: 20px;
+@media all and (max-width: 1320px) {
+  .visual-img {
+    height: 45vw !important;
   }
 
   .sw-visual-control {
-    top: 41.6vw !important;
+    top: 41.66vw !important;
   }
 
   .visual-txt {
-    top: 46vw !important;
-  }
-
-  .visual-title {
-    font-size: 20px !important;
-    margin-bottom: 2.65vw !important;
-  }
-
-  .visual-desc {
-    font-size: 12px !important;
-    margin-bottom: 1.5vw !important;
-  }
-
-  .visual-bt {
-    font-size: 12px !important;
-    padding: 1vw 1.5vw !important;
+    padding: 3.78vw 0 !important;
   }
 }
-@media all and (max-width: 640px) {
-  .visual {
-    height: 550px;
-    margin-bottom: 0;
+@media all and (max-width: 800px) {
+  .visual-img {
+    height: 125vw !important;
+  }
+
+  .visual-1 {
+    background: url("../images/M_minimal_new.png") no-repeat center !important;
+  }
+
+  .visual-2 {
+    background: url("../images/M1_newborn.png") no-repeat center !important;
+  }
+
+  .visual-3 {
+    background: url("../images/M2_BabyEssence.png") no-repeat center !important;
+  }
+
+  .visual-4 {
+    background: url("../images/M3_Branding.png") no-repeat center !important;
   }
 
   .sw-visual-control {
-    top: 330px !important;
+    top: 120vw !important;
+  }
+}
+@media all and (max-width: 480px) {
+  .visual-img {
+    height: 124.375vw !important;
   }
 
-  .visual-txt {
-    top: 390px !important;
+  .visual-1 {
+    background: url("../images/v_480_1.png") no-repeat center !important;
+  }
+
+  .visual-2 {
+    background: url("../images/v_480_2.png") no-repeat center !important;
+  }
+
+  .visual-3 {
+    background: url("../images/v_480_3.png") no-repeat center !important;
+  }
+
+  .visual-4 {
+    background: url("../images/v_480_4.png") no-repeat center !important;
+  }
+
+  .sw-visual-control {
+    top: 115vw !important;
   }
 }
 /* 카테고리 */
@@ -473,6 +497,35 @@ body {
   background-size: cover;
 }
 
+.wb2 {
+  position: absolute !important;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  display: none !important;
+  border: 2px solid #fff !important;
+  color: #fff !important;
+}
+
+@media all and (max-width: 1320px) {
+  .category .inner > div {
+    height: 46.96vw !important;
+  }
+}
+@media all and (max-width: 760px) {
+  .category .inner > div {
+    width: 100% !important;
+    height: 100vw !important;
+  }
+
+  .category-txt {
+    display: none !important;
+  }
+
+  .wb2 {
+    display: inline-block !important;
+  }
+}
 /* 사이트맵 */
 .sitemap {
   position: relative;
@@ -488,15 +541,13 @@ body {
 
 .sitemap-menu {
   position: relative;
-  display: block;
+  display: table;
   width: 770px;
 }
 
 .sitemap-menu > li {
   position: relative;
-  display: block;
-  float: left;
-  margin-right: 45px;
+  display: table-cell;
 }
 
 .sitemap-menu > li > a {
@@ -536,6 +587,15 @@ body {
   color: #ffcc00;
 }
 
+@media all and (max-width: 800px) {
+  .sitemap {
+    margin-left: 20px;
+  }
+
+  .sitemap-submenu li a {
+    font-size: 10px;
+  }
+}
 /* 하단 */
 .footer {
   position: relative;
@@ -574,21 +634,15 @@ body {
   display: inline-block;
   margin-right: 40px;
   font-size: 12px;
-  color: #7e868c;
+  color: #777;
 }
 
 .siteinfo-list li span em {
   position: relative;
   display: inline-block;
-  margin-left: 20px;
+  margin-right: 20px;
   font-size: 12px;
-  color: #777;
-}
-
-.siteinfo-list li span a {
-  position: relative;
-  display: inline-block;
-  margin-left: 20px;
+  color: #7e868c;
 }
 
 .insta-link {
@@ -637,4 +691,35 @@ body {
   position: relative;
   display: inline-block;
   font-size: 12px;
+}
+
+@media all and (max-width: 800px) {
+  .footer .inner {
+    width: 100%;
+  }
+
+  .footer-top .inner {
+    padding-bottom: 35px;
+  }
+
+  .siteinfo-list li span {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .siteinfo-list li span em {
+    margin-left: 10px;
+    width: 120px;
+  }
+
+  .copy {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .service-list {
+    width: 100%;
+    text-align: center;
+  }
 }/*# sourceMappingURL=main.css.map */
